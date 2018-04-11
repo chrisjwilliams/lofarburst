@@ -1,0 +1,35 @@
+#ifndef GREENBURST_VERSION_H
+#define GREENBURST_VERSION_H
+
+
+#define GREENBURST_BUILD_TYPE "@CMAKE_BUILD_TYPE@"
+#define GREENBURST_VERSION "@PROJECT_VERSION@"
+#define PROJECT_NAME "@PROJECT_NAME@"
+#define GREENBURST_RCS_VERSION "@PROJECT_SOURCE_VERSION@"
+#define GREENBURST_BOOST_MAJOR_VERSION @Boost_MAJOR_VERSION@
+#define GREENBURST_BOOST_MINOR_VERSION @Boost_MINOR_VERSION@
+#define GREENBURST_BOOST_ASIO_DEBUG @BOOST_ASIO_DEBUG@
+#define GREENBURST_CUDA_MAJOR_VERSION @CUDA_VERSION_MAJOR@
+#define GREENBURST_CUDA_MINOR_VERSION @CUDA_VERSION_MINOR@
+#define GREENBURST_CUDA_VERSION @CUDA_VERSION_STRING@
+
+#if defined(__DATE__) && defined(__TIME__)
+#   define GREENBURST_VERSION_LONG "@PROJECT_VERSION@ (@CMAKE_BUILD_TYPE@), " __DATE__ " " __TIME__
+#   define GREENBURST_BUILD_INFO "(@CMAKE_BUILD_TYPE@) v" VERSION " (" __DATE__ " " __TIME__")"
+#else
+#   define GREENBURST_VERSION_LONG "@PROJECT_VERSION@ (@CMAKE_BUILD_TYPE@)"
+#   define GREENBURST_BUILD_INFO "(@CMAKE_BUILD_TYPE@) v" GREENBURST_VERSION
+#endif
+
+namespace greenburst {
+
+extern const char* version;
+extern const char* full_version;
+extern const char* boost_version;
+extern const char* panda_version;
+extern const char* cuda_version;
+extern const char* cheetah_version;
+
+} // namespace greenburst
+
+#endif // GREENBURST_VERSION_H

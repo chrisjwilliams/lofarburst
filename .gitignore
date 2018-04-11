@@ -1,0 +1,11 @@
+*.swp
+*~
+/build/
+/CMakeFiles/
+/.codelight/
+*CTestTestfile.cmake
+*cmake_install.cmake
+*.sav
+*.old
+*.new
+*.ori
